@@ -107,5 +107,5 @@ Response
 | radio_signal    | Radio signal strength in dBm                                            |
 | serial          | Serial number of the device                                             |
 | temperature     | Temperature in degrees Celsius                                          |
-| timestamp       | Date and time of the data in ISO format                                 |
+| timestamp       | Date and time of the data in ISO format UTC                             |
 | voc             | Volatile Organic Compounds level in parts per bilion (ppb)              |
