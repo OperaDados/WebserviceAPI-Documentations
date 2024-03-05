@@ -41,6 +41,7 @@ Tabela de dispositivos de testes
 | 5d37a448a9d06f7855909d87db9cdc86 | 4      | Parque da Cidade Dona Sarah Kubitschek  - Brasilia DF                 |
 | f8fc473aa51d8a537b84f0698a425843 | 5      | Parque da Cidade Dona Sarah Kubitschek  - Brasilia DF                 |
 | 5289e7a1ae5c5805a96102da28fcc103 | 6      | Parque da Cidade Dona Sarah Kubitschek  - Brasilia DF                 |
+| 9ddc44f94cc8f2933c76d63b4ec79b0b | 10000  | Novo hardware revisão 2.0.0                                           |
 
 
 Response
