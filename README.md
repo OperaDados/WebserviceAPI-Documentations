@@ -48,65 +48,100 @@ Response
 ```json
 [
     {
-        "UUID": "71464ae6-2798-4b75-a356-b89958eaa9e9",
-        "battery": 5.013,
-        "co2": 273,
-        "device_id": "Device-1",
+        "UUID": "64e4a4a4-a1c0-4745-ab27-2c6a34f99438",
+        "battery": 4.979,
+        "co2": 298,
+        "device_id": "Device-2",
+        "firmware": "0.0.1",
+        "gateway_gps": {
+            "lat": -15.685830116271973,
+            "lng": -47.86117935180664
+        },
+        "gateway_id": "b0fd0b7003280000",
+        "humidity": 88.79,
+        "pressure": 88795,
+        "protocol": 2,
+        "pulse_counter": 0,
+        "radio_signal": -113.0,
+        "serial": "2",
+        "soil": {
+            "conductance": 0,
+            "temperature": 0.0
+        },
+        "temperature": 22.94,
+        "timestamp": "2024-02-09 19:53:18.159588",
+        "voc": 0
+    },
+    {
+        "UUID": "0c06044b-745d-4e87-9688-d9ab1b17aedc",
+        "battery": 4.979,
+        "co2": 298,
+        "device_id": "Device-2",
         "firmware": "0.0.1",
         "gateway_gps": {
             "lat": -15.805370330810547,
             "lng": -47.89466857910156
         },
         "gateway_id": "b0fd0b7004400000",
-        "humidity": 81.08,
-        "pressure": 88983,
+        "humidity": 88.79,
+        "pressure": 88795,
         "protocol": 2,
         "pulse_counter": 0,
-        "radio_signal": -114.0,
-        "serial": "1",
-        "temperature": 25.17,
-        "timestamp": "2024-02-09 19:54:51.068659",
+        "radio_signal": -106.0,
+        "serial": "2",
+        "soil": {
+            "conductance": 0,
+            "temperature": 0.0
+        },
+        "temperature": 22.94,
+        "timestamp": "2024-02-09 19:53:18.537141",
         "voc": 0
     },
     {
-        "UUID": "52f84938-940a-4673-9121-882fad1e84c0",
-        "battery": 5.013,
-        "co2": 293,
-        "device_id": "Device-1",
+        "UUID": "a49c954a-0084-4de9-bba6-25ea17dc26e3",
+        "battery": 4.979,
+        "co2": 298,
+        "device_id": "Device-2",
         "firmware": "0.0.1",
         "gateway_gps": {
-            "lat": -15.873499870300293,
-            "lng": -48.073509216308594
+            "lat": -15.776960372924805,
+            "lng": -47.8875617980957
         },
-        "gateway_id": "b0fd0b7007020000",
-        "humidity": 85.2,
-        "pressure": 88993,
+        "gateway_id": "70b3d54b19520000",
+        "humidity": 88.79,
+        "pressure": 88795,
         "protocol": 2,
         "pulse_counter": 0,
-        "radio_signal": -117.0,
-        "serial": "1",
-        "temperature": 24.95,
-        "timestamp": "2024-02-09 20:09:57.825031",
+        "radio_signal": -115.0,
+        "serial": "2",
+        "soil": {
+            "conductance": 0,
+            "temperature": 0.0
+        },
+        "temperature": 22.94,
+        "timestamp": "2024-02-09 19:53:21.127203",
         "voc": 0
     }
 ]
 ```
 
-| Field           | Description                                                             |
-| --------------- | ----------------------------------------------------------------------- |
-| UUID            | Universally Unique Identifier                                           |
-| battery         | Battery level in volts                                                  |
-| co2             | Carbon dioxide level in parts per million (ppm)                         |
-| device_id       | Identifier for the device                                               |
-| firmware        | Firmware version of the device                                          |
-| gateway_gps     | GPS coordinates of the gateway                                          |
-| gateway_id      | Identifier for the gateway                                              |
-| humidity        | Humidity level in percentage                                            |
-| pressure        | Atmospheric pressure in Pascals                                         |
-| protocol        | Communication protocol version                                          |
-| pulse_counter   | Pulse counter value rain milimimeters                                   |
-| radio_signal    | Radio signal strength in dBm                                            |
-| serial          | Serial number of the device                                             |
-| temperature     | Temperature in degrees Celsius                                          |
-| timestamp       | Date and time of the data in ISO format UTC                             |
-| voc             | Volatile Organic Compounds level in parts per bilion (ppb)              |
+| Field            | Description                                                |
+|------------------|------------------------------------------------------------|
+| UUID             | Universally Unique Identifier                              |
+| battery          | Battery level in volts                                     |
+| co2              | Carbon dioxide level in parts per million (ppm)            |
+| device_id        | Identifier for the device                                  |
+| firmware         | Firmware version of the device                             |
+| gateway_gps      | GPS coordinates of the gateway                             |
+| gateway_id       | Identifier for the gateway                                 |
+| humidity         | Humidity level in percentage                               |
+| pressure         | Atmospheric pressure in Pascals                            |
+| protocol         | Communication protocol version                             |
+| pulse_counter    | Pulse counter value rain milimimeters                      |
+| radio_signal     | Radio signal strength in dBm                               |
+| serial           | Serial number of the device                                |
+| temperature      | Temperature in degrees Celsius                             |
+| timestamp        | Date and time of the data in ISO format UTC                |
+| voc              | Volatile Organic Compounds level in parts per bilion (ppb) |
+| soil conductance | Conductance level in uS/cm                                 |
+| soil temperature | Temperature in degrees Celsius                             |
