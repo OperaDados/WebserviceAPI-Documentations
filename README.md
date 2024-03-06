@@ -145,3 +145,25 @@ Response
 | voc              | Volatile Organic Compounds level in parts per bilion (ppb) |
 | soil conductance | Conductance level in uS/cm                                 |
 | soil temperature | Temperature in degrees Celsius                             |
+
+***
+
+Get average temperature
+
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/avertemperature?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458"
+```
+
+```json
+[
+  {
+    "serial": "2",
+    "temperature": 22.866166181131693
+  },
+  {
+    "serial": "1",
+    "temperature": 21.71061676505083
+  }
+]
+```
