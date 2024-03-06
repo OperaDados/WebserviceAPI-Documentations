@@ -157,13 +157,41 @@ curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}
 
 ```json
 [
-  {
-    "serial": "2",
-    "temperature": 22.866166181131693
-  },
-  {
-    "serial": "1",
-    "temperature": 21.71061676505083
-  }
+    {
+        "serial": "1",
+        "temperature": 19.5,
+        "timestamp": "2024-02-11 11:03:23.287055"
+    },
+    {
+        "serial": "2",
+        "temperature": 30.92,
+        "timestamp": "2024-02-12 19:19:10.437828"
+    },
+    {
+        "serial": "2",
+        "temperature": 28.08,
+        "timestamp": "2024-02-17 14:28:34.429010"
+    },
+    {
+        "serial": "2",
+        "temperature": 19.53,
+        "timestamp": "2024-02-11 08:48:44.155755"
+    },
+    {
+        "serial": "2",
+        "temperature": 26.34,
+        "timestamp": "2024-02-13 22:12:11.675673"
+    },
+    {
+        "serial": "2",
+        "temperature": 23.03,
+        "timestamp": "2024-02-15 02:10:08.292944"
+    },
+    {
+        "serial": "2",
+        "temperature": 25.95,
+        "timestamp": "2024-02-12 13:51:49.223147"
+    }
 ]
+
 ```
