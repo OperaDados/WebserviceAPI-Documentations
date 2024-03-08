@@ -27,11 +27,29 @@ curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}
 ***
 <h2> Devices: </h2>
 
-Get air devices
-```sh
-curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
---request GET ""${URL_IOT}"/api/operadados/v1/airdevices?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458"
-```
+<h3> Tabela de unidades de medidas </h3>
+
+| Field            | Description                                                |
+|------------------|------------------------------------------------------------|
+| UUID             | Universally Unique Identifier                              |
+| battery          | Battery level in volts                                     |
+| co2              | Carbon dioxide level in parts per million (ppm)            |
+| device_id        | Identifier for the device                                  |
+| firmware         | Firmware version of the device                             |
+| gateway_gps      | GPS coordinates of the gateway                             |
+| gateway_id       | Identifier for the gateway                                 |
+| humidity         | Humidity level in percentage                               |
+| pressure         | Atmospheric pressure in Pascals                            |
+| protocol         | Communication protocol version                             |
+| pulse_counter    | Pulse counter value rain milimimeters                      |
+| radio_signal     | Radio signal strength in dBm                               |
+| serial           | Serial number of the device                                |
+| temperature      | Temperature in degrees Celsius                             |
+| timestamp        | Date and time of the data in ISO format UTC                |
+| voc              | Volatile Organic Compounds level in parts per bilion (ppb) |
+| soil conductance | Conductance level in uS/cm                                 |
+| soil temperature | Temperature in degrees Celsius                             |
+
 Tabela de dispositivos de testes
 
 | ID                               | Serial | Location                                                              |
@@ -44,7 +62,13 @@ Tabela de dispositivos de testes
 | 9ddc44f94cc8f2933c76d63b4ec79b0b | 10000  | Novo hardware revisão 2.0.0                                           |
 
 
-Response
+
+Get air devices:
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/airdevices?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458"
+```
+Response:
 ```json
 [
     {
@@ -124,37 +148,15 @@ Response
     }
 ]
 ```
-
-| Field            | Description                                                |
-|------------------|------------------------------------------------------------|
-| UUID             | Universally Unique Identifier                              |
-| battery          | Battery level in volts                                     |
-| co2              | Carbon dioxide level in parts per million (ppm)            |
-| device_id        | Identifier for the device                                  |
-| firmware         | Firmware version of the device                             |
-| gateway_gps      | GPS coordinates of the gateway                             |
-| gateway_id       | Identifier for the gateway                                 |
-| humidity         | Humidity level in percentage                               |
-| pressure         | Atmospheric pressure in Pascals                            |
-| protocol         | Communication protocol version                             |
-| pulse_counter    | Pulse counter value rain milimimeters                      |
-| radio_signal     | Radio signal strength in dBm                               |
-| serial           | Serial number of the device                                |
-| temperature      | Temperature in degrees Celsius                             |
-| timestamp        | Date and time of the data in ISO format UTC                |
-| voc              | Volatile Organic Compounds level in parts per bilion (ppb) |
-| soil conductance | Conductance level in uS/cm                                 |
-| soil temperature | Temperature in degrees Celsius                             |
-
 ***
 
-Get average temperature
+Get average temperature:
 
 ```sh
 curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
 --request GET ""${URL_IOT}"/api/operadados/v1/avertemperature?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458"
 ```
-
+Response:
 ```json
 [
     {
@@ -194,4 +196,120 @@ curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}
     }
 ]
 
+```
+
+Get average co2:
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/averco2?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458"
+```
+
+Response:
+```json
+[
+  {
+    "co2": 278.0,
+    "serial": "2",
+    "timestamp": "2024-02-14 19:09:53.490025"
+  },
+  {
+    "co2": 271.0,
+    "serial": "2",
+    "timestamp": "2024-02-15 23:48:05.135308"
+  },
+  {
+    "co2": 279.0,
+    "serial": "2",
+    "timestamp": "2024-02-14 12:57:36.636566"
+  },
+  {
+    "co2": 336.0,
+    "serial": "2",
+    "timestamp": "2024-02-12 06:26:38.504063"
+  }
+]
+```
+Get average humidity:
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/averhumidity?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458" | jq
+```
+Response:
+```json
+[
+  {
+    "humidity": 28.5,
+    "serial": "2",
+    "timestamp": "2024-02-14 19:09:53.490025"
+  },
+  {
+    "humidity": 77.75,
+    "serial": "2",
+    "timestamp": "2024-02-15 23:48:05.135308"
+  },
+  {
+    "humidity": 52.13,
+    "serial": "2",
+    "timestamp": "2024-02-14 12:57:36.636566"
+  },
+  {
+    "humidity": 96.63,
+    "serial": "2",
+    "timestamp": "2024-02-12 06:26:38.504063"
+  }
+]
+```
+
+Get average pressure:
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/averpressure?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458" | jq
+```
+Response:
+```json
+[
+  {
+    "pressure": 89331.0,
+    "serial": "2",
+    "timestamp": "2024-02-15 23:48:05.135308"
+  },
+  {
+    "pressure": 89539.0,
+    "serial": "2",
+    "timestamp": "2024-02-14 12:57:36.636566"
+  },
+  {
+    "pressure": 89467.0,
+    "serial": "2",
+    "timestamp": "2024-02-12 06:26:38.504063"
+  }
+]
+```
+
+Get pulse counter (rain fall):
+
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/averrainfall?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458" | jq
+```
+
+Response:
+```json
+[
+  {
+    "precipitation": 0,
+    "serial": "2",
+    "timestamp": "2024-02-15 23:48:05.135308"
+  },
+  {
+    "precipitation": 0,
+    "serial": "2",
+    "timestamp": "2024-02-14 12:57:36.636566"
+  },
+  {
+    "precipitation": 0,
+    "serial": "2",
+    "timestamp": "2024-02-12 06:26:38.504063"
+  }
+]
 ```
