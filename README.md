@@ -63,7 +63,8 @@ Tabela de dispositivos de testes
 
 
 
-Get air devices:
+<h2> Get all data: </h2>
+
 ```sh
 curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
 --request GET ""${URL_IOT}"/api/operadados/v1/airdevices?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458"
@@ -150,7 +151,7 @@ Response:
 ```
 ***
 
-Get average temperature:
+<h2> Average temperature  </h2>
 
 ```sh
 curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
@@ -198,7 +199,8 @@ Response:
 
 ```
 
-Get average co2:
+<h2> Average co2 </h2>
+
 ```sh
 curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
 --request GET ""${URL_IOT}"/api/operadados/v1/averco2?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458"
@@ -229,7 +231,10 @@ Response:
   }
 ]
 ```
-Get average humidity:
+***
+
+<h2> Average humidity </h2>
+
 ```sh
 curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
 --request GET ""${URL_IOT}"/api/operadados/v1/averhumidity?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458" | jq
@@ -259,8 +264,10 @@ Response:
   }
 ]
 ```
+***
 
-Get average pressure:
+<h2> Average Pressure </h2>
+
 ```sh
 curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
 --request GET ""${URL_IOT}"/api/operadados/v1/averpressure?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458" | jq
@@ -285,8 +292,9 @@ Response:
   }
 ]
 ```
+***
 
-Get pulse counter (rain fall):
+<h2> Pulse counter (rain fall) </h2>
 
 ```sh
 curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
@@ -311,5 +319,63 @@ Response:
     "serial": "2",
     "timestamp": "2024-02-12 06:26:38.504063"
   }
+]
+```
+***
+
+<h2> Soil conductance </h2>
+
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/aversoilconductance?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458" | jq
+```
+
+Response:
+```json
+[
+    {
+        "conductance": 0,
+        "serial": "2",
+        "timestamp": "2024-02-13 22:27:05.974036"
+    },
+    {
+        "conductance": 0,
+        "serial": "8",
+        "timestamp": "2024-02-10 18:48:11.560415"
+    },
+    {
+        "conductance": 0,
+        "serial": "2",
+        "timestamp": "2024-02-15 17:42:46.205085"
+    }
+]
+```
+***
+
+<h2> Soil temperature </h2>
+
+```sh
+curl -svk -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" \
+--request GET ""${URL_IOT}"/api/operadados/v1/aversoilconductance?init_date=2024-01-01&end_date=2024-02-17%2023:59:59.999999&device_ids=c29500c03f2964cb5abb26ab467c95c3&device_ids=a0ffd961d6ff58ad9af3acd78559d458" | jq
+```
+
+Response:
+```json
+[
+    {
+        "serial": "2",
+        "temperature": 0,
+        "timestamp": "2024-02-13 22:27:05.974036"
+    },
+    {
+        "serial": "8",
+        "temperature": 0,
+        "timestamp": "2024-02-10 18:48:11.560415"
+    },
+    {
+        "serial": "2",
+        "temperature": 0,
+        "timestamp": "2024-02-15 17:42:46.205085"
+    }
 ]
 ```
